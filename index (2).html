@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Acrit Maison | Luxury Jewelry & Fine Craftsmanship — Bangladesh</title>
+    <meta name="description" content="Discover exquisite luxury rings, necklaces, bracelets and fine jewelry by Acrit Maison. Premium craftsmanship, authentic materials, secure checkout and fast delivery across Bangladesh.">
+    <meta name="keywords" content="luxury jewelry Bangladesh, gold rings BDT, diamond necklace Dhaka, fine jewelry, Acrit Maison">
+    <meta property="og:title" content="Acrit Maison | Luxury Jewelry House">
+    <meta property="og:description" content="Exquisite luxury jewelry crafted with passion. Shop rings, necklaces & bracelets with secure checkout.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acritmaison.com">
+    <meta property="og:image" content="https://acritmaison.com/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#090909">
+    <link rel="canonical" href="https://acritmaison.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --black: #090909;
+            --black-light: #111111;
+            --black-lighter: #1a1a1a;
+            --gold: #D4AF37;
+            --gold-light: #E8C84A;
+            --gold-dark: #B8960C;
+            --gold-glow: rgba(212, 175, 55, 0.15);
+            --gold-glow-strong: rgba(212, 175, 55, 0.3);
+            --white: #FAFAFA;
+            --white-dim: #E0E0E0;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-strong: rgba(255, 255, 255, 0.08);
+            --danger: #FF4444;
+            --success: #44BB44;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 20px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.4);
+            --shadow-gold: 0 4px 20px rgba(212,175,55,0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+        input, select, textarea { font-family: var(--font-body); outline: none; }
+        img { max-width: 100%; display: block; }
+        ul { list-style: none; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--black); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+        /* ============ LOADER ============ */
+        #page-loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--black); z-index: 100000;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 30px;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #page-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loader-brand {
+            font-family: var(--font-heading); font-size: 2.5rem;
+            color: var(--gold); letter-spacing: 8px; text-transform: uppercase;
+            animation: loaderPulse 1.5s ease-in-out infinite;
+        }
+        .loader-line {
+            width: 120px; height: 1px; background: var(--gray-dark);
+            position: relative; overflow: hidden;
+        }
+        .loader-line::after {
+            content: ''; position: absolute; left: -100%; top: 0;
+            width: 100%; height: 100%; background: var(--gold);
+            animation: loaderSlide 1.2s ease-in-out infinite;
+        }
+        @keyframes loaderPulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
+        @keyframes loaderSlide { 0%{left:-100%} 100%{left:100%} }
+
+        /* ============ HEADER ============ */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
+            transition: var(--transition);
+            padding: 0;
+        }
+        header.scrolled {
+            background: rgba(9,9,9,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 24px; max-width: 1400px; margin: 0 auto;
+        }
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem; font-weight: 500;
+            letter-spacing: 6px; text-transform: uppercase;
+            color: var(--gold);
+            transition: var(--transition);
+        }
+        .logo span { color: var(--white); font-weight: 300; }
+        .logo:hover { text-shadow: 0 0 20px var(--gold-glow-strong); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
+        .nav-links {
+            display: flex; gap: 32px; align-items: center;
+            margin-right: 24px;
+        }
+        .nav-links a {
+            font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--white-dim); transition: var(--transition);
+            position: relative; padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0; height: 1px; background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-icons { display: flex; gap: 6px; align-items: center; }
+
+        .icon-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: transparent; color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); position: relative;
+            font-size: 1.1rem;
+        }
+        .icon-btn:hover { background: var(--glass-strong); color: var(--gold); }
+
+        .cart-count {
+            position: absolute; top: 2px; right: 2px;
+            background: var(--gold); color: var(--black);
+            font-size: 0.6rem; font-weight: 700;
+            width: 18px; height: 18px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transform: scale(0); transition: var(--transition);
+        }
+        .cart-count.show { transform: scale(1); }
+
+        .wishlist-count {
+            position: absolute; top: 2px; right: 2px;
+            background: var(--danger); color: var(--white);
+            font-size: 0.6rem; font-weight: 700;
+            width: 18px; height: 18px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transform: scale(0); transition: var(--transition);
+        }
+        .wishlist-count.show { transform: scale(1); }
+
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; padding: 8px;
+        }
+        .hamburger span {
+            width: 22px; height: 1.5px; background: var(--white);
+            transition: var(--transition); display: block;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 4px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -4px); }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100vh;
+            background: rgba(9,9,9,0.98);
+            backdrop-filter: blur(30px);
+            z-index: 9998;
+            flex-direction: column; align-items: center; justify-content: center;
+            gap: 28px; opacity: 0; visibility: hidden;
+            transition: var(--transition-slow);
+        }
+        .mobile-nav.active { opacity: 1; visibility: visible; }
+        .mobile-nav a {
+            font-family: var(--font-heading); font-size: 1.8rem;
+            color: var(--white-dim); letter-spacing: 4px;
+            transition: var(--transition);
+        }
+        .mobile-nav a:hover { color: var(--gold); }
+
+        /* ============ HERO ============ */
+        #hero {
+            min-height: 100vh; display: flex; align-items: center;
+            justify-content: center; text-align: center;
+            position: relative; overflow: hidden;
+            background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 80%, rgba(212,175,55,0.03) 0%, transparent 50%),
+                        var(--black);
+        }
+        .hero-bg-pattern {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03;
+            background-image: repeating-linear-gradient(
+                45deg, transparent, transparent 80px,
+                rgba(212,175,55,0.1) 80px, rgba(212,175,55,0.1) 81px
+            );
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            padding: 0 20px;
+            animation: heroFadeIn 1.5s ease-out 0.5s both;
+        }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-eyebrow {
+            font-size: 0.7rem; letter-spacing: 8px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 24px;
+            display: flex; align-items: center; justify-content: center; gap: 16px;
+        }
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: ''; width: 40px; height: 1px; background: var(--gold-dark);
+        }
+        .hero-title {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 300; color: var(--white);
+            margin-bottom: 24px; line-height: 1.1;
+        }
+        .hero-title em {
+            font-style: italic; color: var(--gold);
+            font-weight: 400;
+        }
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--gray); max-width: 550px; margin: 0 auto 48px;
+            font-weight: 300; line-height: 1.8;
+        }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 18px 48px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase;
+            transition: var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .hero-cta::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--gold);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        .hero-cta:hover { color: var(--black); }
+        .hero-cta:hover::before { left: 0; }
+        .hero-scroll-indicator {
+            position: absolute; bottom: 40px; left: 50%;
+            transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: var(--gray); font-size: 0.65rem; letter-spacing: 3px;
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+        @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+        .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold-dark), transparent); }
+
+        /* ============ SECTION STYLING ============ */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        .section-header {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-eyebrow {
+            font-size: 0.65rem; letter-spacing: 6px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 300; margin-bottom: 16px;
+        }
+        .section-divider {
+            width: 60px; height: 1px; background: var(--gold);
+            margin: 0 auto;
+        }
+
+        /* ============ COLLECTIONS ============ */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .collection-card {
+            position: relative; overflow: hidden;
+            border-radius: var(--radius);
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            background: var(--black-lighter);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+        .collection-card:hover { border-color: var(--gold-dark); transform: translateY(-4px); }
+        .collection-card:hover .collection-bg { transform: scale(1.08); }
+        .collection-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 5rem; transition: var(--transition-slow);
+            background: linear-gradient(135deg, var(--black-lighter), var(--black-light));
+        }
+        .collection-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 30px 24px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            z-index: 2;
+        }
+        .collection-name {
+            font-family: var(--font-heading);
+            font-size: 1.4rem; margin-bottom: 6px;
+        }
+        .collection-count {
+            font-size: 0.7rem; letter-spacing: 3px;
+            color: var(--gold); text-transform: uppercase;
+        }
+
+        /* ============ PRODUCTS ============ */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+        .product-card:hover {
+            border-color: var(--gold-dark);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-gold);
+        }
+        .product-badges {
+            position: absolute; top: 12px; left: 12px; z-index: 3;
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .badge {
+            padding: 4px 10px; border-radius: 4px;
+            font-size: 0.6rem; letter-spacing: 2px;
+            text-transform: uppercase; font-weight: 600;
+        }
+        .badge-bestseller { background: var(--gold); color: var(--black); }
+        .badge-limited { background: rgba(255,68,68,0.9); color: var(--white); }
+        .badge-new { background: rgba(68,187,68,0.9); color: var(--white); }
+
+        .product-wishlist-btn {
+            position: absolute; top: 12px; right: 12px; z-index: 3;
+            width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .product-wishlist-btn:hover,
+        .product-wishlist-btn.active { background: var(--danger); color: var(--white); }
+
+        .product-image {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--black-lighter), #1f1f1f);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-card:hover .product-image-emoji {
+            transform: scale(1.15);
+        }
+        .product-image-emoji {
+            transition: var(--transition-slow);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-material {
+            font-size: 0.65rem; letter-spacing: 2px;
+            color: var(--gold); text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .product-name {
+            font-family: var(--font-heading);
+            font-size: 1.2rem; margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .product-price {
+            font-size: 1.2rem; color: var(--gold);
+            font-weight: 600; margin-bottom: 4px;
+        }
+        .product-stock {
+            font-size: 0.7rem; color: var(--gray);
+            margin-bottom: 16px;
+        }
+        .product-stock.low { color: var(--danger); }
+        .product-actions {
+            display: flex; gap: 8px;
+        }
+        .btn-add-cart {
+            flex: 1; padding: 12px 16px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase; font-weight: 600;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-add-cart:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); }
+        .btn-add-cart:disabled {
+            background: var(--gray-dark); color: var(--gray);
+            cursor: not-allowed;
+        }
+        .btn-quick-view {
+            padding: 12px 16px;
+            background: var(--glass-strong);
+            color: var(--white);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .btn-quick-view:hover { border-color: var(--gold-dark); color: var(--gold); }
+
+        /* Product Filter */
+        .product-filters {
+            display: flex; justify-content: center; gap: 12px;
+            margin-bottom: 40px; flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 24px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--white-dim);
+            font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--gold-glow);
+        }
+
+        /* ============ TRUST BADGES ============ */
+        .trust-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .trust-item {
+            text-align: center; padding: 24px 16px;
+            border-radius: var(--radius);
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+        .trust-item:hover { border-color: var(--gold-dark); }
+        .trust-icon { font-size: 2rem; margin-bottom: 12px; }
+        .trust-title {
+            font-family: var(--font-heading);
+            font-size: 1rem; margin-bottom: 6px;
+        }
+        .trust-desc { font-size: 0.75rem; color: var(--gray); }
+
+        /* ============ REVIEWS ============ */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .review-card {
+            padding: 28px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        .review-card:hover { border-color: var(--gold-dark); }
+        .review-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+        .review-text {
+            font-size: 0.9rem; color: var(--white-dim);
+            margin-bottom: 16px; line-height: 1.7;
+            font-style: italic;
+        }
+        .review-author { font-size: 0.75rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+        .review-location { font-size: 0.7rem; color: var(--gray); margin-top: 4px; }
+
+        /* ============ CART DRAWER ============ */
+        .cart-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000; opacity: 0; visibility: hidden;
+            transition: var(--transition);
+        }
+        .cart-overlay.active { opacity: 1; visibility: visible; }
+
+        .cart-drawer {
+            position: fixed; top: 0; right: 0;
+            width: 420px; max-width: 90vw; height: 100vh;
+            background: var(--black-light);
+            border-left: 1px solid var(--glass-border);
+            z-index: 10001;
+            transform: translateX(100%);
+            transition: var(--transition-slow);
+            display: flex; flex-direction: column;
+        }
+        .cart-drawer.active { transform: translateX(0); }
+
+        .cart-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .cart-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+        }
+        .cart-close {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--glass); color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); font-size: 1.2rem;
+        }
+        .cart-close:hover { background: var(--danger); }
+
+        .cart-items {
+            flex: 1; overflow-y: auto; padding: 16px 24px;
+        }
+        .cart-empty {
+            text-align: center; padding: 60px 20px;
+            color: var(--gray);
+        }
+        .cart-empty-icon { font-size: 3rem; margin-bottom: 16px; }
+        .cart-empty-text { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 8px; }
+
+        .cart-item {
+            display: flex; gap: 16px; padding: 16px 0;
+            border-bottom: 1px solid var(--glass-border);
+            animation: cartItemIn 0.3s ease-out;
+        }
+        @keyframes cartItemIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+
+        .cart-item-img {
+            width: 70px; height: 70px;
+            background: var(--black-lighter);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; flex-shrink: 0;
+        }
+        .cart-item-details { flex: 1; }
+        .cart-item-name {
+            font-family: var(--font-heading);
+            font-size: 0.95rem; margin-bottom: 4px;
+        }
+        .cart-item-material { font-size: 0.65rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 8px; }
+        .cart-item-price { font-size: 0.9rem; color: var(--gold); font-weight: 600; }
+
+        .cart-item-controls {
+            display: flex; flex-direction: column;
+            align-items: flex-end; justify-content: space-between;
+        }
+        .cart-item-remove {
+            background: none; color: var(--gray);
+            font-size: 0.8rem; transition: var(--transition);
+            padding: 4px;
+        }
+        .cart-item-remove:hover { color: var(--danger); }
+
+        .qty-controls {
+            display: flex; align-items: center; gap: 0;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+        }
+        .qty-btn {
+            width: 30px; height: 30px;
+            background: var(--glass); color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); font-size: 0.85rem;
+        }
+        .qty-btn:hover { background: var(--gold); color: var(--black); }
+        .qty-value {
+            width: 36px; text-align: center;
+            font-size: 0.85rem; font-weight: 600;
+            background: transparent; color: var(--white);
+            border: none; border-left: 1px solid var(--glass-border);
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .cart-footer {
+            padding: 24px;
+            border-top: 1px solid var(--glass-border);
+            background: var(--black);
+        }
+        .cart-summary-row {
+            display: flex; justify-content: space-between;
+            margin-bottom: 8px; font-size: 0.85rem;
+        }
+        .cart-summary-row.total {
+            font-size: 1.1rem; font-weight: 600;
+            color: var(--gold); margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--glass-border);
+        }
+        .cart-summary-label { color: var(--gray); }
+        .free-shipping-note {
+            font-size: 0.7rem; color: var(--success);
+            text-align: center; margin-bottom: 12px;
+        }
+        .btn-checkout {
+            width: 100%; padding: 16px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.75rem; letter-spacing: 3px;
+            text-transform: uppercase; font-weight: 700;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .btn-checkout:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); }
+
+        /* ============ WISHLIST DRAWER ============ */
+        .wishlist-drawer {
+            position: fixed; top: 0; right: 0;
+            width: 380px; max-width: 90vw; height: 100vh;
+            background: var(--black-light);
+            border-left: 1px solid var(--glass-border);
+            z-index: 10001;
+            transform: translateX(100%);
+            transition: var(--transition-slow);
+            display: flex; flex-direction: column;
+        }
+        .wishlist-drawer.active { transform: translateX(0); }
+
+        .wishlist-items { flex: 1; overflow-y: auto; padding: 16px 24px; }
+        .wishlist-item {
+            display: flex; gap: 12px; padding: 12px 0;
+            border-bottom: 1px solid var(--glass-border);
+            align-items: center;
+        }
+        .wishlist-item-img {
+            width: 50px; height: 50px;
+            background: var(--black-lighter);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        .wishlist-item-info { flex: 1; }
+        .wishlist-item-name { font-size: 0.85rem; margin-bottom: 2px; }
+        .wishlist-item-price { font-size: 0.8rem; color: var(--gold); }
+        .wishlist-item-actions { display: flex; gap: 4px; }
+        .wishlist-move-btn, .wishlist-remove-btn {
+            padding: 6px 10px; border-radius: 4px;
+            font-size: 0.65rem; transition: var(--transition);
+        }
+        .wishlist-move-btn {
+            background: var(--gold); color: var(--black);
+        }
+        .wishlist-remove-btn {
+            background: var(--glass); color: var(--gray);
+        }
+
+        /* ============ CHECKOUT PAGE ============ */
+        .checkout-page {
+            display: none; min-height: 100vh;
+            padding-top: 100px; padding-bottom: 100px;
+        }
+        .checkout-page.active { display: block; }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .checkout-form-section {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 36px;
+            margin-bottom: 24px;
+        }
+        .checkout-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem; margin-bottom: 24px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .checkout-section-number {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: var(--gold); color: var(--black);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block; font-size: 0.7rem;
+            letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gray); margin-bottom: 8px;
+        }
+        .form-label .required { color: var(--gold); }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%; padding: 14px 16px;
+            background: var(--black-lighter);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .form-input.error { border-color: var(--danger); }
+        .form-input.valid { border-color: var(--success); }
+
+        .form-error {
+            font-size: 0.7rem; color: var(--danger);
+            margin-top: 6px; display: none;
+        }
+        .form-error.show { display: block; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        .form-select option { background: var(--black-lighter); color: var(--white); }
+        .form-textarea { resize: vertical; min-height: 80px; }
+
+        /* Checkout Summary Sidebar */
+        .checkout-summary {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 32px;
+            position: sticky; top: 100px;
+        }
+        .checkout-summary-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem; margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .checkout-summary-item {
+            display: flex; gap: 12px; padding: 12px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .checkout-summary-item-img {
+            width: 50px; height: 50px;
+            background: var(--black-lighter);
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        .checkout-summary-item-info { flex: 1; }
+        .checkout-summary-item-name { font-size: 0.8rem; margin-bottom: 2px; }
+        .checkout-summary-item-qty { font-size: 0.7rem; color: var(--gray); }
+        .checkout-summary-item-price { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
+
+        .checkout-totals { margin-top: 16px; }
+        .checkout-total-row {
+            display: flex; justify-content: space-between;
+            padding: 6px 0; font-size: 0.85rem;
+        }
+        .checkout-total-row.grand {
+            font-size: 1.2rem; font-weight: 700;
+            color: var(--gold); border-top: 1px solid var(--glass-border);
+            padding-top: 16px; margin-top: 8px;
+        }
+
+        .btn-place-order {
+            width: 100%; padding: 18px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.75rem; letter-spacing: 3px;
+            text-transform: uppercase; font-weight: 700;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+        .btn-place-order:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); }
+
+        .cod-badge {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 16px; margin-top: 12px;
+            background: var(--gold-glow);
+            border: 1px solid var(--gold-dark);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem; color: var(--gold);
+        }
+
+        .secure-badge {
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; padding: 12px;
+            margin-top: 12px;
+            font-size: 0.7rem; color: var(--gray);
+        }
+
+        /* ============ ORDER CONFIRMATION ============ */
+        .order-confirmation {
+            display: none; min-height: 100vh;
+            padding-top: 100px; padding-bottom: 100px;
+        }
+        .order-confirmation.active { display: flex; align-items: center; justify-content: center; }
+
+        .confirmation-card {
+            max-width: 600px; width: 100%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 48px; text-align: center;
+            animation: confirmSlideUp 0.6s ease-out;
+        }
+        @keyframes confirmSlideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+        .confirm-check {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: var(--gold-glow);
+            border: 2px solid var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px; font-size: 2rem;
+            animation: confirmPop 0.4s ease-out 0.3s both;
+        }
+        @keyframes confirmPop { from{transform:scale(0)} to{transform:scale(1)} }
+
+        .confirm-title {
+            font-family: var(--font-heading);
+            font-size: 2rem; margin-bottom: 8px;
+        }
+        .confirm-subtitle { color: var(--gray); margin-bottom: 32px; }
+
+        .confirm-details {
+            text-align: left;
+            background: var(--black-lighter);
+            border-radius: var(--radius);
+            padding: 24px; margin-bottom: 24px;
+        }
+        .confirm-row {
+            display: flex; justify-content: space-between;
+            padding: 8px 0; font-size: 0.85rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .confirm-row:last-child { border: none; }
+        .confirm-row-label { color: var(--gray); }
+        .confirm-row-value { color: var(--white); font-weight: 500; }
+        .confirm-row-value.gold { color: var(--gold); }
+
+        .confirm-delivery {
+            padding: 16px; margin-bottom: 24px;
+            background: var(--gold-glow);
+            border: 1px solid var(--gold-dark);
+            border-radius: var(--radius-sm);
+        }
+        .confirm-delivery-title { font-size: 0.7rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+        .confirm-delivery-time { font-size: 0.9rem; }
+
+        .btn-continue-shopping {
+            padding: 14px 40px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.7rem; letter-spacing: 3px;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .btn-continue-shopping:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--glass-border);
+            background: var(--black);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 60px;
+        }
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.4rem; color: var(--gold);
+            letter-spacing: 4px; margin-bottom: 16px;
+        }
+        .footer-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.7; max-width: 300px; }
+        .footer-heading {
+            font-size: 0.7rem; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            font-size: 0.85rem; color: var(--gray);
+            transition: var(--transition);
+        }
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 16px;
+        }
+        .footer-copy { font-size: 0.75rem; color: var(--gray); }
+        .footer-payments { display: flex; gap: 8px; }
+        .payment-icon {
+            padding: 6px 12px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            font-size: 0.7rem; color: var(--gray);
+        }
+
+        /* ============ LEGAL PAGES ============ */
+        .legal-page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+        .legal-page.active { display: block; }
+        .legal-content {
+            max-width: 800px; margin: 0 auto;
+            padding: 0 20px;
+        }
+        .legal-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem; margin-bottom: 8px;
+        }
+        .legal-date { font-size: 0.75rem; color: var(--gray); margin-bottom: 40px; }
+        .legal-section { margin-bottom: 32px; }
+        .legal-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem; color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .legal-section p {
+            font-size: 0.9rem; color: var(--white-dim);
+            line-height: 1.8; margin-bottom: 12px;
+        }
+        .legal-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--gold); font-size: 0.8rem;
+            margin-bottom: 32px; transition: var(--transition);
+        }
+        .legal-back:hover { gap: 12px; }
+
+        /* ============ CONTACT PAGE ============ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .contact-info-card {
+            padding: 24px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+        }
+        .contact-info-icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .contact-info-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem; margin-bottom: 8px;
+        }
+        .contact-info-text { font-size: 0.85rem; color: var(--gray); }
+
+        /* ============ TOAST ============ */
+        .toast-container {
+            position: fixed; bottom: 100px; right: 24px;
+            z-index: 99999; display: flex;
+            flex-direction: column; gap: 8px;
+        }
+        .toast {
+            padding: 14px 20px;
+            background: var(--black-light);
+            border: 1px solid var(--gold-dark);
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-size: 0.8rem;
+            display: flex; align-items: center; gap: 10px;
+            animation: toastIn 0.3s ease-out;
+            box-shadow: var(--shadow);
+            max-width: 320px;
+        }
+        @keyframes toastIn { from{opacity:0;transform:translateX(100%)} to{opacity:1;transform:translateX(0)} }
+        .toast.removing { animation: toastOut 0.3s ease-in forwards; }
+        @keyframes toastOut { to{opacity:0;transform:translateX(100%)} }
+
+        /* ============ QUICK VIEW MODAL ============ */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10002; opacity: 0; visibility: hidden;
+            transition: var(--transition);
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-content {
+            max-width: 700px; width: 100%;
+            background: var(--black-light);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+
+        .modal-close {
+            position: absolute; top: 16px; right: 16px;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(0,0,0,0.6); color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10; transition: var(--transition); font-size: 1.2rem;
+        }
+        .modal-close:hover { background: var(--danger); }
+
+        .modal-product { display: grid; grid-template-columns: 1fr 1fr; }
+        .modal-product-image {
+            aspect-ratio: 1; background: var(--black-lighter);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 5rem;
+        }
+        .modal-product-info { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+        .modal-product-material { font-size: 0.65rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+        .modal-product-name { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 12px; }
+        .modal-product-price { font-size: 1.4rem; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+        .modal-product-stock { font-size: 0.75rem; color: var(--gray); margin-bottom: 20px; }
+        .modal-product-desc { font-size: 0.85rem; color: var(--white-dim); line-height: 1.7; margin-bottom: 24px; }
+
+        /* ============ MOBILE STICKY BAR ============ */
+        .mobile-sticky-bar {
+            display: none;
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(9,9,9,0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            z-index: 9997;
+            padding: 12px 16px;
+        }
+        .mobile-sticky-inner {
+            display: flex; gap: 10px;
+        }
+        .mobile-sticky-cart {
+            flex: 1; padding: 14px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase; font-weight: 700;
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+
+        /* ============ PAGE NAVIGATION ============ */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* ============ BACK TO TOP ============ */
+        .back-to-top {
+            position: fixed; bottom: 80px; right: 24px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gold); color: var(--black);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 999; opacity: 0; visibility: hidden;
+            transition: var(--transition); font-size: 1.1rem;
+            box-shadow: var(--shadow-gold);
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-4px); }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .checkout-grid { grid-template-columns: 1fr; }
+            .checkout-summary { position: static; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .mobile-nav { display: flex; }
+            .mobile-sticky-bar { display: block; }
+
+            .collections-grid { grid-template-columns: 1fr; gap: 16px; }
+            .collection-card { aspect-ratio: 16/9; }
+
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .product-info { padding: 12px; }
+            .product-name { font-size: 0.95rem; }
+            .product-price { font-size: 1rem; }
+            .product-actions { flex-direction: column; }
+
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+            .reviews-grid { grid-template-columns: 1fr; }
+
+            .checkout-form-section { padding: 24px 16px; }
+            .form-row { grid-template-columns: 1fr; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+
+            .modal-product { grid-template-columns: 1fr; }
+
+            .contact-grid { grid-template-columns: 1fr; }
+
+            .section { padding: 60px 0; }
+            .section-header { margin-bottom: 40px; }
+
+            .hero-cta { padding: 16px 36px; }
+
+            .back-to-top { bottom: 90px; right: 16px; }
+            .toast-container { bottom: 90px; right: 16px; left: 16px; }
+            .toast { max-width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .product-image { aspect-ratio: 1; }
+            .product-info { padding: 10px; }
+            .product-name { font-size: 0.85rem; }
+            .product-price { font-size: 0.9rem; }
+            .btn-add-cart { padding: 10px 8px; font-size: 0.6rem; letter-spacing: 1px; }
+            .product-material { font-size: 0.6rem; }
+            .product-stock { font-size: 0.65rem; margin-bottom: 10px; }
+            .product-wishlist-btn { width: 32px; height: 32px; font-size: 0.85rem; }
+            .product-badges { top: 8px; left: 8px; }
+            .badge { font-size: 0.5rem; padding: 3px 6px; }
+
+            .header-inner { padding: 14px 16px; }
+            .logo { font-size: 1.2rem; letter-spacing: 4px; }
+
+            .collection-card { aspect-ratio: 4/3; }
+            .trust-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-in {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ============ PRODUCT DETAIL PAGE ============ */
+        .product-detail-page {
+            display: none; min-height: 100vh;
+            padding-top: 100px; padding-bottom: 100px;
+        }
+        .product-detail-page.active { display: block; }
+        .product-detail-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: start;
+        }
+        .pd-image {
+            aspect-ratio: 1; background: var(--black-lighter);
+            border-radius: var(--radius-lg); display: flex;
+            align-items: center; justify-content: center;
+            font-size: 8rem; border: 1px solid var(--glass-border);
+        }
+        .pd-info { padding: 20px 0; }
+        .pd-breadcrumb {
+            font-size: 0.7rem; color: var(--gray); margin-bottom: 16px;
+            display: flex; gap: 8px; align-items: center;
+        }
+        .pd-breadcrumb a { color: var(--gold); }
+        .pd-material { font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+        .pd-name { font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 16px; }
+        .pd-price { font-size: 1.8rem; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+        .pd-stock { font-size: 0.8rem; color: var(--gray); margin-bottom: 24px; }
+        .pd-desc { font-size: 0.9rem; color: var(--white-dim); line-height: 1.8; margin-bottom: 32px; }
+        .pd-features { margin-bottom: 32px; }
+        .pd-feature {
+            display: flex; align-items: center; gap: 12px;
+            padding: 8px 0; font-size: 0.85rem; color: var(--white-dim);
+        }
+        .pd-feature-icon { color: var(--gold); font-size: 1rem; }
+        .pd-actions { display: flex; gap: 12px; margin-bottom: 24px; }
+        .pd-add-cart {
+            flex: 1; padding: 16px 24px;
+            background: var(--gold); color: var(--black);
+            font-size: 0.75rem; letter-spacing: 3px;
+            text-transform: uppercase; font-weight: 700;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .pd-add-cart:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); }
+        .pd-wishlist {
+            padding: 16px 20px;
+            background: var(--glass); border: 1px solid var(--glass-border);
+            color: var(--white); border-radius: var(--radius-sm);
+            transition: var(--transition); font-size: 1.1rem;
+        }
+        .pd-wishlist:hover { border-color: var(--gold); color: var(--gold); }
+        .pd-trust-badges {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .pd-trust-badge {
+            padding: 10px 12px; background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            font-size: 0.7rem; color: var(--gray);
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail-grid { grid-template-columns: 1fr; gap: 24px; }
+            .pd-image { font-size: 5rem; }
+            .pd-name { font-size: 1.6rem; }
+            .pd-price { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="page-loader">
+    <div class="loader-brand">Acrit Maison</div>
+    <div class="loader-line"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header id="main-header">
+    <div class="header-inner">
+        <a href="#" class="logo" onclick="navigateTo('home')">
+            Acrit <span>Maison</span>
+        </a>
+        <nav>
+            <div class="nav-links">
+                <a href="#" onclick="navigateTo('home')">Home</a>
+                <a href="#" onclick="scrollToSection('collections')">Collections</a>
+                <a href="#" onclick="scrollToSection('products')">Shop</a>
+                <a href="#" onclick="scrollToSection('reviews')">Reviews</a>
+                <a href="#" onclick="navigateTo('contact')">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button class="icon-btn" onclick="toggleWishlist()" aria-label="Wishlist">
+                    ♡
+                    <span class="wishlist-count" id="wishlist-count">0</span>
+                </button>
+                <button class="icon-btn" onclick="toggleCart()" aria-label="Cart">
+                    🛒
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+    <a href="#" onclick="navigateTo('home'); toggleMobileNav();">Home</a>
+    <a href="#" onclick="scrollToSection('collections'); toggleMobileNav();">Collections</a>
+    <a href="#" onclick="scrollToSection('products'); toggleMobileNav();">Shop</a>
+    <a href="#" onclick="scrollToSection('reviews'); toggleMobileNav();">Reviews</a>
+    <a href="#" onclick="navigateTo('contact'); toggleMobileNav();">Contact</a>
+    <a href="#" onclick="navigateTo('privacy'); toggleMobileNav();">Privacy Policy</a>
+    <a href="#" onclick="navigateTo('terms'); toggleMobileNav();">Terms</a>
+</div>
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Luxury Jewelry House</div>
+            <h1 class="hero-title">The Art of<br><em>Timeless</em> Elegance</h1>
+            <p class="hero-subtitle">
+                Discover exquisite craftsmanship where every piece tells a story of luxury, passion, and unparalleled beauty. Handcrafted for those who appreciate the extraordinary.
+            </p>
+            <a href="#" class="hero-cta" onclick="scrollToSection('collections')">
+                Explore Acrit Maison →
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            SCROLL
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">🔒</div>
+                    <div class="trust-title">Secure Checkout</div>
+                    <div class="trust-desc">SSL encrypted payment processing</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">💎</div>
+                    <div class="trust-title">Authentic Materials</div>
+                    <div class="trust-desc">Certified gold, diamonds & gemstones</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">🚚</div>
+                    <div class="trust-title">Fast Delivery</div>
+                    <div class="trust-desc">3–5 days across Bangladesh</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">↩️</div>
+                    <div class="trust-title">7-Day Returns</div>
+                    <div class="trust-desc">Hassle-free return policy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="section" id="collections">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-eyebrow">Our Collections</div>
+                <h2 class="section-title">Curated with Passion</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card fade-in" onclick="filterProducts('rings')">
+                    <div class="collection-bg">💍</div>
+                    <div class="collection-overlay">
+                        <div class="collection-name">Rings</div>
+                        <div class="collection-count">Explore Collection</div>
+                    </div>
+                </div>
+                <div class="collection-card fade-in" onclick="filterProducts('necklaces')">
+                    <div class="collection-bg">📿</div>
+                    <div class="collection-overlay">
+                        <div class="collection-name">Necklaces</div>
+                        <div class="collection-count">Explore Collection</div>
+                    </div>
+                </div>
+                <div class="collection-card fade-in" onclick="filterProducts('bracelets')">
+                    <div class="collection-bg">⌚</div>
+                    <div class="collection-overlay">
+                        <div class="collection-name">Bracelets</div>
+                        <div class="collection-count">Explore Collection</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-eyebrow">Our Pieces</div>
+                <h2 class="section-title">Bestsellers & New Arrivals</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="product-filters fade-in">
+                <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" onclick="filterProducts('rings')">Rings</button>
+                <button class="filter-btn" onclick="filterProducts('necklaces')">Necklaces</button>
+                <button class="filter-btn" onclick="filterProducts('bracelets')">Bracelets</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ALSO BOUGHT -->
+    <section class="section" id="also-bought">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-eyebrow">Trending</div>
+                <h2 class="section-title">People Also Bought</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="products-grid" id="also-bought-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-eyebrow">Testimonials</div>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- ============ PRODUCT DETAIL PAGE ============ -->
+<div class="product-detail-page page" id="page-product-detail">
+    <div class="container">
+        <div class="product-detail-grid" id="product-detail-content">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+    <!-- Related Products -->
+    <div class="container" style="margin-top:60px;">
+        <div class="section-header">
+            <div class="section-eyebrow">You May Also Like</div>
+            <h2 class="section-title">Related Pieces</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="products-grid" id="related-products-grid" style="margin-top:40px;"></div>
+    </div>
+</div>
+
+<!-- ============ CHECKOUT PAGE ============ -->
+<div class="checkout-page page" id="page-checkout">
+    <div class="container">
+        <a href="#" class="legal-back" onclick="navigateTo('home')">← Back to Shopping</a>
+        <h2 class="section-title" style="margin-bottom:40px;">Checkout</h2>
+        <div class="checkout-grid">
+            <div class="checkout-form">
+                <!-- Step 1: Customer Info -->
+                <div class="checkout-form-section">
+                    <div class="checkout-section-title">
+                        <span class="checkout-section-number">1</span>
+                        Customer Information
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="checkout-name" placeholder="Enter your full name" autocomplete="name">
+                        <div class="form-error" id="error-name">Please enter your full name</div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number <span class="required">*</span></label>
+                            <input type="tel" class="form-input" id="checkout-phone" placeholder="+880 1XXX-XXXXXX" autocomplete="tel">
+                            <div class="form-error" id="error-phone">Enter valid Bangladesh phone (+880 1XXXXXXXXX)</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email (Optional)</label>
+                            <input type="email" class="form-input" id="checkout-email" placeholder="your@email.com" autocomplete="email">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Delivery Address -->
+                <div class="checkout-form-section">
+                    <div class="checkout-section-title">
+                        <span class="checkout-section-number">2</span>
+                        Delivery Address
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Full Address <span class="required">*</span></label>
+                        <textarea class="form-input form-textarea" id="checkout-address" placeholder="House, Road, Area, Landmark..." autocomplete="street-address"></textarea>
+                        <div class="form-error" id="error-address">Please enter your complete delivery address (minimum 10 characters)</div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">City <span class="required">*</span></label>
+                            <select class="form-input form-select" id="checkout-city">
+                                <option value="">Select City</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Barishal">Barishal</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Mymensingh">Mymensingh</option>
+                                <option value="Comilla">Comilla</option>
+                                <option value="Gazipur">Gazipur</option>
+                                <option value="Narayanganj">Narayanganj</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="form-error" id="error-city">Please select your city</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Postal Code</label>
+                            <input type="text" class="form-input" id="checkout-postal" placeholder="1234" autocomplete="postal-code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Country</label>
+                        <select class="form-input form-select" id="checkout-country">
+                            <option value="Bangladesh" selected>Bangladesh</option>
+                            <option value="India">India</option>
+                            <option value="UAE">United Arab Emirates</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="USA">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="checkout-form-section">
+                    <div class="checkout-section-title">
+                        <span class="checkout-section-number">3</span>
+                        Payment Method
+                    </div>
+                    <div style="padding:16px; background:var(--gold-glow); border:1px solid var(--gold-dark); border-radius:var(--radius-sm); margin-bottom:16px;">
+                        <label style="display:flex; align-items:center; gap:12px; cursor:pointer; font-size:0.9rem;">
+                            <input type="radio" name="payment" value="cod" checked style="accent-color: var(--gold);width:18px;height:18px;">
+                            💵 Cash on Delivery (COD)
+                        </label>
+                    </div>
+                    <div style="padding:16px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm);">
+                        <label style="display:flex; align-items:center; gap:12px; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+                            <input type="radio" name="payment" value="bkash" style="accent-color: var(--gold);width:18px;height:18px;">
+                            📱 bKash / Nagad (Coming Soon)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Summary -->
+            <div class="checkout-summary" id="checkout-summary">
+                <div class="checkout-summary-title">Order Summary</div>
+                <div id="checkout-summary-items"></div>
+                <div class="checkout-totals" id="checkout-totals"></div>
+                <button class="btn-place-order" onclick="placeOrder()">
+                    Place Order
+                </button>
+                <div class="cod-badge">
+                    💵 Cash on Delivery Available
+                </div>
+                <div class="secure-badge">
+                    🔒 SSL Secured · Your data is protected
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ ORDER CONFIRMATION ============ -->
+<div class="order-confirmation page" id="page-confirmation">
+    <div class="container">
+        <div class="confirmation-card" id="confirmation-card">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- ============ PRIVACY POLICY ============ -->
+<div class="legal-page page" id="page-privacy">
+    <div class="legal-content">
+        <a href="#" class="legal-back" onclick="navigateTo('home')">← Back to Home</a>
+        <h2 class="legal-title">Privacy Policy</h2>
+        <p class="legal-date">Last updated: January 2025</p>
+        <div class="legal-section">
+            <h3>1. Information We Collect</h3>
+            <p>At Acrit Maison, we collect personal information that you voluntarily provide when placing an order, including your name, phone number, email address, and delivery address. This information is essential for processing and delivering your orders.</p>
+        </div>
+        <div class="legal-section">
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the information we collect to process your orders, communicate with you about your purchases, improve our services, and send you updates about new collections and offers (with your consent).</p>
+        </div>
+        <div class="legal-section">
+            <h3>3. Data Protection</h3>
+            <p>We implement industry-standard security measures to protect your personal information. All data is encrypted during transmission and stored securely. We do not sell or share your personal information with third parties except as necessary for order fulfillment.</p>
+        </div>
+        <div class="legal-section">
+            <h3>4. Cookies</h3>
+            <p>Our website uses local storage to maintain your shopping cart and wishlist preferences. No tracking cookies are used without your consent.</p>
+        </div>
+        <div class="legal-section">
+            <h3>5. Your Rights</h3>
+            <p>You have the right to access, correct, or delete your personal information at any time. Contact us at privacy@acritmaison.com for any data-related requests.</p>
+        </div>
+        <div class="legal-section">
+            <h3>6. Contact</h3>
+            <p>For privacy-related inquiries, please email us at privacy@acritmaison.com or call +880 1700-000000.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============ TERMS & CONDITIONS ============ -->
+<div class="legal-page page" id="page-terms">
+    <div class="legal-content">
+        <a href="#" class="legal-back" onclick="navigateTo('home')">← Back to Home</a>
+        <h2 class="legal-title">Terms & Conditions</h2>
+        <p class="legal-date">Last updated: January 2025</p>
+        <div class="legal-section">
+            <h3>1. General Terms</h3>
+            <p>By accessing and placing orders through the Acrit Maison website, you agree to be bound by these Terms and Conditions. All products are subject to availability, and we reserve the right to limit quantities.</p>
+        </div>
+        <div class="legal-section">
+            <h3>2. Product Information</h3>
+            <p>We strive to display our products as accurately as possible. However, slight variations in color and appearance may occur due to screen settings. All product descriptions, materials, and specifications are provided to the best of our knowledge.</p>
+        </div>
+        <div class="legal-section">
+            <h3>3. Pricing</h3>
+            <p>All prices are listed in Bangladeshi Taka (BDT/৳). Prices are subject to change without prior notice. The price at the time of order placement will be the final price charged.</p>
+        </div>
+        <div class="legal-section">
+            <h3>4. Orders & Payment</h3>
+            <p>Orders are confirmed upon successful submission of the checkout form. We currently accept Cash on Delivery (COD) for all orders within Bangladesh. Additional payment methods will be available soon.</p>
+        </div>
+        <div class="legal-section">
+            <h3>5. Shipping & Delivery</h3>
+            <p>Standard delivery within Bangladesh takes 3–5 business days. International orders take 7–14 business days. Shipping fees are calculated based on the order total. Orders above ৳100,000 qualify for free shipping within Bangladesh.</p>
+        </div>
+        <div class="legal-section">
+            <h3>6. Returns & Exchanges</h3>
+            <p>We offer a 7-day return policy from the date of delivery. Items must be in their original condition and packaging. Custom or personalized items are non-returnable. Contact our support team to initiate a return.</p>
+        </div>
+        <div class="legal-section">
+            <h3>7. Authenticity Guarantee</h3>
+            <p>Every Acrit Maison piece comes with an authenticity certificate. We guarantee the quality and genuineness of all materials used in our jewelry.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============ CONTACT PAGE ============ -->
+<div class="legal-page page" id="page-contact">
+    <div class="legal-content" style="max-width:1000px;">
+        <a href="#" class="legal-back" onclick="navigateTo('home')">← Back to Home</a>
+        <h2 class="legal-title">Contact Us</h2>
+        <p class="legal-date">We'd love to hear from you</p>
+        <div class="contact-grid" style="margin-top:40px;">
+            <div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">📧</div>
+                    <div class="contact-info-title">Email Support</div>
+                    <div class="contact-info-text">support@acritmaison.com<br>We respond within 24 hours</div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">📞</div>
+                    <div class="contact-info-title">Phone Support</div>
+                    <div class="contact-info-text">+880 1700-000000<br>Sat–Thu, 10AM–8PM BST</div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">📍</div>
+                    <div class="contact-info-title">Visit Us</div>
+                    <div class="contact-info-text">Gulshan Avenue, Dhaka 1212<br>Bangladesh</div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">💬</div>
+                    <div class="contact-info-title">WhatsApp</div>
+                    <div class="contact-info-text">+880 1700-000000<br>Quick responses guaranteed</div>
+                </div>
+            </div>
+            <div>
+                <div class="checkout-form-section">
+                    <div class="checkout-section-title">Send a Message</div>
+                    <div class="form-group">
+                        <label class="form-label">Your Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone <span class="required">*</span></label>
+                        <input type="tel" class="form-input" placeholder="+880 1XXX-XXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message <span class="required">*</span></label>
+                        <textarea class="form-input form-textarea" placeholder="How can we help you?" style="min-height:120px;"></textarea>
+                    </div>
+                    <button class="btn-place-order" onclick="showToast('✓ Message sent! We will respond within 24 hours.')">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ CART OVERLAY & DRAWER ============ -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+        <div class="cart-title">Your Cart</div>
+        <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <!-- Rendered by JS -->
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+        <div id="cart-summary"></div>
+        <button class="btn-checkout" onclick="goToCheckout()">
+            Proceed to Checkout
+        </button>
+    </div>
+</div>
+
+<!-- ============ WISHLIST DRAWER ============ -->
+<div class="cart-overlay" id="wishlist-overlay" onclick="toggleWishlist()" style="z-index:10000;"></div>
+<div class="wishlist-drawer" id="wishlist-drawer">
+    <div class="cart-header">
+        <div class="cart-title">Wishlist</div>
+        <button class="cart-close" onclick="toggleWishlist()">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlist-items">
+        <!-- Rendered by JS -->
+    </div>
+</div>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal-overlay" id="quickview-modal">
+    <div class="modal-content" id="quickview-content">
+        <button class="modal-close" onclick="closeQuickView()">✕</button>
+        <!-- Rendered by JS -->
+    </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer id="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">ACRIT MAISON</div>
+                <p class="footer-desc">
+                    A luxury jewelry house dedicated to timeless elegance and exceptional craftsmanship. Every piece is a masterpiece, crafted for those who appreciate the extraordinary.
+                </p>
+            </div>
+            <div>
+                <div class="footer-heading">Collections</div>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="filterProducts('rings')">Rings</a></li>
+                    <li><a href="#" onclick="filterProducts('necklaces')">Necklaces</a></li>
+                    <li><a href="#" onclick="filterProducts('bracelets')">Bracelets</a></li>
+                    <li><a href="#" onclick="scrollToSection('products')">All Products</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Support</div>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigateTo('contact')">Contact Us</a></li>
+                    <li><a href="#" onclick="navigateTo('terms')">Shipping Info</a></li>
+                    <li><a href="#" onclick="navigateTo('terms')">Returns</a></li>
+                    <li><a href="#" onclick="navigateTo('terms')">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Legal</div>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigateTo('privacy')">Privacy Policy</a></li>
+                    <li><a href="#" onclick="navigateTo('terms')">Terms & Conditions</a></li>
+                    <li><a href="#" onclick="navigateTo('terms')">Authenticity</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2025 Acrit Maison. All rights reserved. Luxury Jewelry House — Bangladesh</div>
+            <div class="footer-payments">
+                <span class="payment-icon">💵 COD</span>
+                <span class="payment-icon">📱 bKash</span>
+                <span class="payment-icon">🔒 SSL</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky-bar" id="mobile-sticky-bar">
+    <div class="mobile-sticky-inner">
+        <button class="mobile-sticky-cart" onclick="toggleCart()">
+            🛒 View Cart (<span id="mobile-cart-count">0</span>)
+        </button>
+    </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container"></div>
+
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// ============ PRODUCT DATA ============
+const products = [
+    {
+        id: 1, name: "Imperial Diamond Solitaire Ring", category: "rings",
+        price: 185000, material: "18K Gold & VS1 Diamond",
+        stock: 3, tag: "bestseller", emoji: "💍",
+        desc: "A breathtaking solitaire ring featuring a brilliant-cut VS1 diamond set in 18K gold. The epitome of timeless elegance and luxury craftsmanship."
+    },
+    {
+        id: 2, name: "Celestial Eternity Band", category: "rings",
+        price: 125000, material: "Platinum & Diamonds",
+        stock: 5, tag: "new", emoji: "💍",
+        desc: "An enchanting eternity band encircled with channel-set diamonds in pure platinum. A symbol of everlasting love."
+    },
+    {
+        id: 3, name: "Royal Signet Ring", category: "rings",
+        price: 95000, material: "22K Gold",
+        stock: 8, tag: "", emoji: "💍",
+        desc: "A commanding signet ring crafted in 22K gold with intricate engraving. A bold statement of sophistication."
+    },
+    {
+        id: 4, name: "Maison Signature Pendant", category: "necklaces",
+        price: 240000, material: "18K White Gold & Diamond",
+        stock: 2, tag: "bestseller", emoji: "📿",
+        desc: "Our signature pendant featuring a stunning pear-shaped diamond suspended from an 18K white gold chain. Truly exceptional."
+    },
+    {
+        id: 5, name: "Rivière Diamond Necklace", category: "necklaces",
+        price: 385000, material: "18K Gold & 42 Diamonds",
+        stock: 1, tag: "limited", emoji: "📿",
+        desc: "A magnificent rivière necklace set with 42 brilliant-cut diamonds in 18K gold. A masterpiece of luxury jewelry."
+    },
+    {
+        id: 6, name: "Enchanted Pearl Choker", category: "necklaces",
+        price: 145000, material: "South Sea Pearls & Gold",
+        stock: 4, tag: "new", emoji: "📿",
+        desc: "Lustrous South Sea pearls strung on a delicate 18K gold chain. An embodiment of grace and timeless beauty."
+    },
+    {
+        id: 7, name: "Royal Tennis Bracelet", category: "bracelets",
+        price: 155000, material: "White Gold & Diamonds",
+        stock: 4, tag: "bestseller", emoji: "⌚",
+        desc: "A classic tennis bracelet featuring 36 round brilliant diamonds set in 18K white gold. Unmatched elegance."
+    },
+    {
+        id: 8, name: "Sovereign Gold Bangle", category: "bracelets",
+        price: 175000, material: "22K Gold",
+        stock: 6, tag: "", emoji: "⌚",
+        desc: "A substantial bangle crafted in 22K gold with a smooth polished finish. Bold luxury for the modern connoisseur."
+    },
+    {
+        id: 9, name: "Maison Chain Bracelet", category: "bracelets",
+        price: 110000, material: "18K Rose Gold",
+        stock: 7, tag: "new", emoji: "⌚",
+        desc: "An elegant chain bracelet in warm 18K rose gold. Delicate yet impactful, perfect for everyday luxury."
+    },
+    {
+        id: 10, name: "Halo Diamond Ring", category: "rings",
+        price: 275000, material: "Platinum & GIA Diamond",
+        stock: 2, tag: "limited", emoji: "💍",
+        desc: "A magnificent halo ring featuring a GIA-certified center diamond surrounded by a halo of brilliance. Pure perfection."
+    },
+    {
+        id: 11, name: "Cascade Emerald Necklace", category: "necklaces",
+        price: 320000, material: "18K Gold & Colombian Emeralds",
+        stock: 1, tag: "limited", emoji: "📿",
+        desc: "A stunning cascade necklace set with rare Colombian emeralds and diamond accents in 18K gold. One of a kind."
+    },
+    {
+        id: 12, name: "Infinity Diamond Bracelet", category: "bracelets",
+        price: 198000, material: "18K White Gold & Diamonds",
+        stock: 3, tag: "bestseller", emoji: "⌚",
+        desc: "An infinity-inspired bracelet adorned with pavé-set diamonds in 18K white gold. Symbolizing limitless beauty."
+    },
+];
+
+// ============ STATE ============
+let cart = JSON.parse(localStorage.getItem('acm_cart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('acm_wishlist')) || [];
+let currentFilter = 'all';
+
+// ============ INITIALIZATION ============
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('page-loader').classList.add('hidden');
+    }, 1500);
+
+    renderProducts();
+    renderAlsoBought();
+    renderReviews();
+    updateCartUI();
+    updateWishlistUI();
+    initScrollAnimations();
+    initHeaderScroll();
+});
+
+// ============ NAVIGATION ============
+function navigateTo(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + page);
+    if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Show/hide footer
+    const footer = document.getElementById('main-footer');
+    if (page === 'confirmation') {
+        footer.style.display = 'none';
+    } else {
+        footer.style.display = 'block';
+    }
+    // Close mobile nav if open
+    const mn = document.getElementById('mobile-nav');
+    if (mn.classList.contains('active')) toggleMobileNav();
+}
+
+function scrollToSection(id) {
+    navigateTo('home');
+    setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+}
+
+// ============ HEADER SCROLL ============
+function initHeaderScroll() {
+    const header = document.getElementById('main-header');
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        if (window.scrollY > 600) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+}
+
+// ============ MOBILE NAV ============
+function toggleMobileNav() {
+    const mn = document.getElementById('mobile-nav');
+    const hb = document.getElementById('hamburger-btn');
+    mn.classList.toggle('active');
+    hb.classList.toggle('active');
+    document.body.style.overflow = mn.classList.contains('active') ? 'hidden' : '';
+}
+
+// ============ SCROLL ANIMATIONS ============
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
+// ============ FORMAT PRICE ============
+function formatPrice(price) {
+    return '৳' + price.toLocaleString('en-BD');
+}
+
+// ============ RENDER PRODUCTS ============
+function renderProducts(filter) {
+    if (filter) {
+        currentFilter = filter;
+        // Scroll to products section
+        if (filter !== 'all') {
+            navigateTo('home');
+            setTimeout(() => {
+                const el = document.getElementById('products');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    // Update filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase() === currentFilter || (btn.textContent === 'All' && currentFilter === 'all')) {
+            btn.classList.add('active');
+        }
+    });
+
+    const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+    const grid = document.getElementById('products-grid');
+
+    grid.innerHTML = filtered.map(p => renderProductCard(p)).join('');
+
+    // Re-observe new elements
+    setTimeout(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        grid.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    }, 50);
+}
+
+function filterProducts(cat) {
+    renderProducts(cat);
+}
+
+function renderProductCard(p) {
+    const isWishlisted = wishlist.includes(p.id);
+    const stockText = p.stock <= 2 ? `Only ${p.stock} left!` : `${p.stock} in stock`;
+    const stockClass = p.stock <= 2 ? 'low' : '';
+
+    let badges = '';
+    if (p.tag === 'bestseller') badges += '<span class="badge badge-bestseller">Best Seller</span>';
+    if (p.tag === 'limited') badges += '<span class="badge badge-limited">Limited</span>';
+    if (p.tag === 'new') badges += '<span class="badge badge-new">New</span>';
+
+    return `
+        <div class="product-card fade-in">
+            <div class="product-badges">${badges}</div>
+            <button class="product-wishlist-btn ${isWishlisted ? 'active' : ''}" 
+                    onclick="toggleWishlistItem(${p.id})" aria-label="Add to wishlist">
+                ${isWishlisted ? '♥' : '♡'}
+            </button>
+            <div class="product-image" onclick="openProductDetail(${p.id})" style="cursor:pointer;">
+                <span class="product-image-emoji">${p.emoji}</span>
+            </div>
+            <div class="product-info">
+                <div class="product-material">${p.material}</div>
+                <div class="product-name">${p.name}</div>
+                <div class="product-price">${formatPrice(p.price)}</div>
+                <div class="product-stock ${stockClass}">${stockText}</div>
+                <div class="product-actions">
+                    <button class="btn-add-cart" onclick="addToCart(${p.id})" ${p.stock === 0 ? 'disabled' : ''}>
+                        ${p.stock === 0 ? 'Sold Out' : '+ Add to Cart'}
+                    </button>
+                    <button class="btn-quick-view" onclick="openQuickView(${p.id})" aria-label="Quick view">
+                        👁
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ============ ALSO BOUGHT ============
+function renderAlsoBought() {
+    const shuffled = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
+    document.getElementById('also-bought-grid').innerHTML = shuffled.map(p => renderProductCard(p)).join('');
+}
+
+// ============ REVIEWS ============
+function renderReviews() {
+    const reviews = [
+        { name: "Fatima R.", location: "Dhaka, Bangladesh", stars: 5, text: "The Imperial Diamond Ring exceeded all my expectations. The craftsmanship is truly exceptional — it's even more stunning in person. Acrit Maison has earned a lifelong customer." },
+        { name: "Anika S.", location: "Chittagong, Bangladesh", stars: 5, text: "I purchased the Maison Signature Pendant as an anniversary gift. The packaging was luxurious, delivery was prompt, and the piece itself is absolutely breathtaking." },
+        { name: "Rafiq M.", location: "Sylhet, Bangladesh", stars: 5, text: "The Royal Tennis Bracelet is magnificent. My wife was speechless when she opened the box. The quality of diamonds and the white gold setting are world-class." },
+        { name: "Nadia H.", location: "Dhaka, Bangladesh", stars: 5, text: "I've ordered from Acrit Maison three times now and each piece has been flawless. The attention to detail, the secure packaging, and the fast delivery make it a premium experience." },
+        { name: "Imran K.", location: "Rajshahi, Bangladesh", stars: 4, text: "Beautiful Sovereign Gold Bangle. The 22K gold has an amazing warm glow. Delivery took 4 days which was within the estimate. Highly recommended." },
+        { name: "Samira T.", location: "Gazipur, Bangladesh", stars: 5, text: "The Enchanted Pearl Choker is absolutely divine. South Sea pearls of exceptional quality. It arrived in a gorgeous presentation box. Acrit Maison is now my go-to for fine jewelry." }
+    ];
+
+    document.getElementById('reviews-grid').innerHTML = reviews.map(r => `
+        <div class="review-card fade-in">
+            <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+            <p class="review-text">"${r.text}"</p>
+            <div class="review-author">${r.name}</div>
+            <div class="review-location">${r.location}</div>
+        </div>
+    `).join('');
+}
+
+// ============ PRODUCT DETAIL ============
+function openProductDetail(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+
+    const isWishlisted = wishlist.includes(p.id);
+    const stockText = p.stock <= 2 ? `Only ${p.stock} left — Order now!` : `${p.stock} pieces available`;
+
+    document.getElementById('product-detail-content').innerHTML = `
+        <div class="pd-image">${p.emoji}</div>
+        <div class="pd-info">
+            <div class="pd-breadcrumb">
+                <a href="#" onclick="navigateTo('home');return false;">Home</a> › 
+                <a href="#" onclick="filterProducts('${p.category}');return false;">${p.category.charAt(0).toUpperCase() + p.category.slice(1)}</a> › 
+                ${p.name}
+            </div>
+            <div class="pd-material">${p.material}</div>
+            <h1 class="pd-name">${p.name}</h1>
+            <div class="pd-price">${formatPrice(p.price)}</div>
+            <div class="pd-stock ${p.stock <= 2 ? 'low' : ''}" style="color:${p.stock <= 2 ? 'var(--danger)' : 'var(--gray)'}">
+                ${stockText}
+            </div>
+            <p class="pd-desc">${p.desc}</p>
+            <div class="pd-features">
+                <div class="pd-feature"><span class="pd-feature-icon">💎</span> Certified Authentic Materials</div>
+                <div class="pd-feature"><span class="pd-feature-icon">📦</span> Luxury Gift Packaging Included</div>
+                <div class="pd-feature"><span class="pd-feature-icon">🚚</span> Free Shipping on Orders Above ৳100,000</div>
+                <div class="pd-feature"><span class="pd-feature-icon">↩️</span> 7-Day Hassle-Free Returns</div>
+                <div class="pd-feature"><span class="pd-feature-icon">📜</span> Certificate of Authenticity</div>
+            </div>
+            <div class="pd-actions">
+                <button class="pd-add-cart" onclick="addToCart(${p.id})" ${p.stock === 0 ? 'disabled' : ''}>
+                    ${p.stock === 0 ? 'Sold Out' : 'Add to Cart'}
+                </button>
+                <button class="pd-wishlist ${isWishlisted ? 'active' : ''}" onclick="toggleWishlistItem(${p.id}); openProductDetail(${p.id});" style="${isWishlisted ? 'border-color:var(--danger);color:var(--danger);' : ''}">
+                    ${isWishlisted ? '♥' : '♡'}
+                </button>
+            </div>
+            <div class="pd-trust-badges">
+                <div class="pd-trust-badge">🔒 Secure Checkout</div>
+                <div class="pd-trust-badge">💎 Authentic Materials</div>
+                <div class="pd-trust-badge">🚚 3–5 Day Delivery</div>
+                <div class="pd-trust-badge">↩️ 7-Day Returns</div>
+            </div>
+        </div>
+    `;
+
+    // Related products
+    const related = products.filter(x => x.category === p.category && x.id !== p.id).slice(0, 3);
+    document.getElementById('related-products-grid').innerHTML = related.map(r => renderProductCard(r)).join('');
+
+    navigateTo('product-detail');
+}
+
+// ============ QUICK VIEW ============
+function openQuickView(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+
+    const modal = document.getElementById('quickview-modal');
+    document.getElementById('quickview-content').innerHTML = `
+        <button class="modal-close" onclick="closeQuickView()">✕</button>
+        <div class="modal-product">
+            <div class="modal-product-image">${p.emoji}</div>
+            <div class="modal-product-info">
+                <div class="modal-product-material">${p.material}</div>
+                <h3 class="modal-product-name">${p.name}</h3>
+                <div class="modal-product-price">${formatPrice(p.price)}</div>
+                <div class="modal-product-stock ${p.stock <= 2 ? 'low' : ''}" style="color:${p.stock <= 2 ? 'var(--danger)' : 'var(--gray)'}">
+                    ${p.stock <= 2 ? `Only ${p.stock} left!` : `${p.stock} in stock`}
+                </div>
+                <p class="modal-product-desc">${p.desc}</p>
+                <div style="display:flex;gap:10px;">
+                    <button class="btn-add-cart" onclick="addToCart(${p.id}); closeQuickView();" ${p.stock === 0 ? 'disabled' : ''} style="flex:1;">
+                        ${p.stock === 0 ? 'Sold Out' : '+ Add to Cart'}
+                    </button>
+                    <button class="btn-quick-view" onclick="openProductDetail(${p.id}); closeQuickView();">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeQuickView() {
+    document.getElementById('quickview-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// ============ CART SYSTEM ============
+function saveCart() {
+    localStorage.setItem('acm_cart', JSON.stringify(cart));
+}
+
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (!product || product.stock === 0) return;
+
+    const existing = cart.find(c => c.id === id);
+    if (existing) {
+        if (existing.qty < product.stock) {
+            existing.qty++;
+        } else {
+            showToast('⚠️ Maximum available quantity reached');
+            return;
+        }
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            material: product.material,
+            emoji: product.emoji,
+            qty: 1,
+            maxStock: product.stock
+        });
+    }
+
+    saveCart();
+    updateCartUI();
+    showToast('✓ Added to cart — ' + product.name);
+
+    // Briefly open cart
+    if (!document.getElementById('cart-drawer').classList.contains('active')) {
+        toggleCart();
+    }
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(c => c.id !== id);
+    saveCart();
+    updateCartUI();
+    showToast('Removed from cart');
+}
+
+function updateCartQty(id, delta) {
+    const item = cart.find(c => c.id === id);
+    if (!item) return;
+
+    item.qty += delta;
+    if (item.qty <= 0) {
+        removeFromCart(id);
+        return;
+    }
+    if (item.qty > item.maxStock) {
+        item.qty = item.maxStock;
+        showToast('⚠️ Maximum stock reached');
+    }
+
+    saveCart();
+    updateCartUI();
+}
+
+function calculateSubtotal() {
+    return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+function calculateShipping(subtotal) {
+    if (subtotal >= 100000) return 0;
+    if (subtotal > 0) return 150;
+    return 0;
+}
+
+function updateCartUI() {
+    const cartItemsEl = document.getElementById('cart-items');
+    const cartFooter = document.getElementById('cart-footer');
+    const cartCountEl = document.getElementById('cart-count');
+    const mobileCartCount = document.getElementById('mobile-cart-count');
+
+    const totalItems = cart.reduce((sum, c) => sum + c.qty, 0);
+
+    // Update count badges
+    cartCountEl.textContent = totalItems;
+    cartCountEl.classList.toggle('show', totalItems > 0);
+    mobileCartCount.textContent = totalItems;
+
+    if (cart.length === 0) {
+        cartItemsEl.innerHTML = `
+            <div class="cart-empty">
+                <div class="cart-empty-icon">🛒</div>
+                <div class="cart-empty-text">Your cart is empty</div>
+                <p style="font-size:0.8rem; margin-top:8px;">Discover our luxury collections</p>
+            </div>
+        `;
+        cartFooter.style.display = 'none';
+        return;
+    }
+
+    cartItemsEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <div class="cart-item-img">${item.emoji}</div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-material">${item.material}</div>
+                <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
+            </div>
+            <div class="cart-item-controls">
+                <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateCartQty(${item.id}, -1)">−</button>
+                    <input class="qty-value" value="${item.qty}" readonly>
+                    <button class="qty-btn" onclick="updateCartQty(${item.id}, 1)">+</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    const subtotal = calculateSubtotal();
+    const shipping = calculateShipping(subtotal);
+    const total = subtotal + shipping;
+
+    const summaryHTML = `
+        ${subtotal < 100000 && subtotal > 0 ? `<div class="free-shipping-note">Add ${formatPrice(100000 - subtotal)} more for free shipping!</div>` : ''}
+        ${subtotal >= 100000 ? `<div class="free-shipping-note">🎉 You qualify for FREE shipping!</div>` : ''}
+        <div class="cart-summary-row">
+            <span class="cart-summary-label">Subtotal</span>
+            <span>${formatPrice(subtotal)}</span>
+        </div>
+        <div class="cart-summary-row">
+            <span class="cart-summary-label">Shipping</span>
+            <span>${shipping === 0 ? 'FREE' : formatPrice(shipping)}</span>
+        </div>
+        <div class="cart-summary-row total">
+            <span>Total</span>
+            <span>${formatPrice(total)}</span>
+        </div>
+    `;
+
+    document.getElementById('cart-summary').innerHTML = summaryHTML;
+    cartFooter.style.display = 'block';
+}
+
+function toggleCart() {
+    const drawer = document.getElementById('cart-drawer');
+    const overlay = document.getElementById('cart-overlay');
+    const isOpen = drawer.classList.contains('active');
+
+    // Close wishlist if open
+    if (document.getElementById('wishlist-drawer').classList.contains('active')) {
+        toggleWishlist();
+    }
+
+    drawer.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+
+// ============ WISHLIST SYSTEM ============
+function saveWishlist() {
+    localStorage.setItem('acm_wishlist', JSON.stringify(wishlist));
+}
+
+function toggleWishlistItem(id) {
+    const index = wishlist.indexOf(id);
+    if (index > -1) {
+        wishlist.splice(index, 1);
+        showToast('Removed from wishlist');
+    } else {
+        wishlist.push(id);
+        const p = products.find(x => x.id === id);
+        showToast('♥ Added to wishlist — ' + (p ? p.name : ''));
+    }
+    saveWishlist();
+    updateWishlistUI();
+    renderProducts();
+}
+
+function moveWishlistToCart(id) {
+    addToCart(id);
+    const index = wishlist.indexOf(id);
+    if (index > -1) wishlist.splice(index, 1);
+    saveWishlist();
+    updateWishlistUI();
+}
+
+function removeFromWishlist(id) {
+    const index = wishlist.indexOf(id);
+    if (index > -1) wishlist.splice(index, 1);
+    saveWishlist();
+    updateWishlistUI();
+    renderProducts();
+}
+
+function updateWishlistUI() {
+    const countEl = document.getElementById('wishlist-count');
+    countEl.textContent = wishlist.length;
+    countEl.classList.toggle('show', wishlist.length > 0);
+
+    const itemsEl = document.getElementById('wishlist-items');
+    if (wishlist.length === 0) {
+        itemsEl.innerHTML = `
+            <div class="cart-empty">
+                <div class="cart-empty-icon">♡</div>
+                <div class="cart-empty-text">Your wishlist is empty</div>
+                <p style="font-size:0.8rem; margin-top:8px;">Save pieces you love</p>
+            </div>
+        `;
+        return;
+    }
+
+    itemsEl.innerHTML = wishlist.map(id => {
+        const p = products.find(x => x.id === id);
+        if (!p) return '';
+        return `
+            <div class="wishlist-item">
+                <div class="wishlist-item-img">${p.emoji}</div>
+                <div class="wishlist-item-info">
+                    <div class="wishlist-item-name">${p.name}</div>
+                    <div class="wishlist-item-price">${formatPrice(p.price)}</div>
+                </div>
+                <div class="wishlist-item-actions">
+                    <button class="wishlist-move-btn" onclick="moveWishlistToCart(${p.id})">+ Cart</button>
+                    <button class="wishlist-remove-btn" onclick="removeFromWishlist(${p.id})">✕</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function toggleWishlist() {
+    const drawer = document.getElementById('wishlist-drawer');
+    const overlay = document.getElementById('wishlist-overlay');
+    const isOpen = drawer.classList.contains('active');
+
+    // Close cart if open
+    if (document.getElementById('cart-drawer').classList.contains('active')) {
+        toggleCart();
+    }
+
+    drawer.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+
+// ============ CHECKOUT ============
+function goToCheckout() {
+    if (cart.length === 0) {
+        showToast('⚠️ Your cart is empty');
+        return;
+    }
+    toggleCart();
+    setTimeout(() => {
+        navigateTo('checkout');
+        renderCheckoutSummary();
+    }, 400);
+}
+
+function renderCheckoutSummary() {
+    const itemsEl = document.getElementById('checkout-summary-items');
+    const totalsEl = document.getElementById('checkout-totals');
+
+    itemsEl.innerHTML = cart.map(item => `
+        <div class="checkout-summary-item">
+            <div class="checkout-summary-item-img">${item.emoji}</div>
+            <div class="checkout-summary-item-info">
+                <div class="checkout-summary-item-name">${item.name}</div>
+                <div class="checkout-summary-item-qty">Qty: ${item.qty}</div>
+            </div>
+            <div class="checkout-summary-item-price">${formatPrice(item.price * item.qty)}</div>
+        </div>
+    `).join('');
+
+    const subtotal = calculateSubtotal();
+    const shipping = calculateShipping(subtotal);
+    const total = subtotal + shipping;
+
+    totalsEl.innerHTML = `
+        <div class="checkout-total-row">
+            <span style="color:var(--gray);">Subtotal</span>
+            <span>${formatPrice(subtotal)}</span>
+        </div>
+        <div class="checkout-total-row">
+            <span style="color:var(--gray);">Shipping</span>
+            <span>${shipping === 0 ? 'FREE' : formatPrice(shipping)}</span>
+        </div>
+        <div class="checkout-total-row grand">
+            <span>Total</span>
+            <span>${formatPrice(total)}</span>
+        </div>
+    `;
+}
+
+// ============ FORM VALIDATION ============
+function validateBDPhone(phone) {
+    const cleaned = phone.replace(/[\s\-]/g, '');
+    return /^\+8801[3-9]\d{8}$/.test(cleaned);
+}
+
+function validateField(id, validatorFn, errorId) {
+    const input = document.getElementById(id);
+    const error = document.getElementById(errorId);
+    const value = input.value.trim();
+    const isValid = validatorFn(value);
+
+    input.classList.toggle('error', !isValid);
+    input.classList.toggle('valid', isValid);
+    if (error) error.classList.toggle('show', !isValid);
+
+    return isValid;
+}
+
+function setupRealTimeValidation() {
+    const name = document.getElementById('checkout-name');
+    const phone = document.getElementById('checkout-phone');
+    const address = document.getElementById('checkout-address');
+    const city = document.getElementById('checkout-city');
+
+    if (name) name.addEventListener('blur', () => validateField('checkout-name', v => v.length >= 2, 'error-name'));
+    if (phone) phone.addEventListener('blur', () => validateField('checkout-phone', validateBDPhone, 'error-phone'));
+    if (address) address.addEventListener('blur', () => validateField('checkout-address', v => v.length >= 10, 'error-address'));
+    if (city) city.addEventListener('change', () => validateField('checkout-city', v => v !== '', 'error-city'));
+}
+
+// Initialize validation on page load
+document.addEventListener('DOMContentLoaded', setupRealTimeValidation);
+
+// ============ PLACE ORDER ============
+function placeOrder() {
+    if (cart.length === 0) {
+        showToast('⚠️ Your cart is empty');
+        return;
+    }
+
+    const nameValid = validateField('checkout-name', v => v.length >= 2, 'error-name');
+    const phoneValid = validateField('checkout-phone', validateBDPhone, 'error-phone');
+    const addressValid = validateField('checkout-address', v => v.length >= 10, 'error-address');
+    const cityValid = validateField('checkout-city', v => v !== '', 'error-city');
+
+    if (!nameValid || !phoneValid || !addressValid || !cityValid) {
+        showToast('⚠️ Please fill in all required fields correctly');
+        // Scroll to first error
+        const firstError = document.querySelector('.form-input.error');
+        if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
+
+    // Generate order
+    const orderId = 'ACM-' + Math.floor(100000 + Math.random() * 900000);
+    const customerName = document.getElementById('checkout-name').value.trim();
+    const customerPhone = document.getElementById('checkout-phone').value.trim();
+    const customerEmail = document.getElementById('checkout-email').value.trim();
+    const deliveryAddress = document.getElementById('checkout-address').value.trim();
+    const city = document.getElementById('checkout-city').value;
+    const postalCode = document.getElementById('checkout-postal').value.trim();
+    const country = document.getElementById('checkout-country').value;
+
+    const subtotal = calculateSubtotal();
+    const shipping = calculateShipping(subtotal);
+    const total = subtotal + shipping;
+
+    const isInternational = country !== 'Bangladesh';
+    const deliveryEstimate = isInternational ? '7–14 business days' : '3–5 business days';
+
+    // Order summary items
+    const orderItemsHTML = cart.map(item => `
+        <div class="confirm-row">
+            <span class="confirm-row-label">${item.name} × ${item.qty}</span>
+            <span class="confirm-row-value">${formatPrice(item.price * item.qty)}</span>
+        </div>
+    `).join('');
+
+    document.getElementById('confirmation-card').innerHTML = `
+        <div class="confirm-check">✓</div>
+        <h2 class="confirm-title">Order Confirmed!</h2>
+        <p class="confirm-subtitle">Thank you, ${customerName}. Your order has been placed successfully.</p>
+        
+        <div class="confirm-details">
+            <div class="confirm-row">
+                <span class="confirm-row-label">Order ID</span>
+                <span class="confirm-row-value gold">${orderId}</span>
+            </div>
+            <div class="confirm-row">
+                <span class="confirm-row-label">Name</span>
+                <span class="confirm-row-value">${customerName}</span>
+            </div>
+            <div class="confirm-row">
+                <span class="confirm-row-label">Phone</span>
+                <span class="confirm-row-value">${customerPhone}</span>
+            </div>
+            ${customerEmail ? `<div class="confirm-row">
+                <span class="confirm-row-label">Email</span>
+                <span class="confirm-row-value">${customerEmail}</span>
+            </div>` : ''}
+            <div class="confirm-row">
+                <span class="confirm-row-label">Delivery Address</span>
+                <span class="confirm-row-value">${deliveryAddress}, ${city}${postalCode ? ', ' + postalCode : ''}, ${country}</span>
+            </div>
+        </div>
+
+        <div class="confirm-details">
+            <div style="font-size:0.7rem; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">Order Items</div>
+            ${orderItemsHTML}
+            <div class="confirm-row" style="border:none; padding-top:12px;">
+                <span class="confirm-row-label">Subtotal</span>
+                <span class="confirm-row-value">${formatPrice(subtotal)}</span>
+            </div>
+            <div class="confirm-row" style="border:none;">
+                <span class="confirm-row-label">Shipping</span>
+                <span class="confirm-row-value">${shipping === 0 ? 'FREE' : formatPrice(shipping)}</span>
+            </div>
+            <div class="confirm-row" style="border:none; font-size:1.1rem;">
+                <span class="confirm-row-label" style="color:var(--white); font-weight:600;">Total Paid</span>
+                <span class="confirm-row-value gold" style="font-weight:700;">${formatPrice(total)}</span>
+            </div>
+        </div>
+
+        <div class="confirm-delivery">
+            <div class="confirm-delivery-title">Estimated Delivery</div>
+            <div class="confirm-delivery-time">📦 ${deliveryEstimate} · ${isInternational ? 'International Shipping' : 'Bangladesh Delivery'}</div>
+        </div>
+
+        <div class="cod-badge" style="justify-content:center; margin-bottom:24px;">
+            💵 Payment: Cash on Delivery
+        </div>
+
+        <button class="btn-continue-shopping" onclick="continueShopping()">
+            Continue Shopping
+        </button>
+    `;
+
+    // Clear cart
+    cart = [];
+    saveCart();
+    updateCartUI();
+
+    // Clear form
+    document.getElementById('checkout-name').value = '';
+    document.getElementById('checkout-phone').value = '';
+    document.getElementById('checkout-email').value = '';
+    document.getElementById('checkout-address').value = '';
+    document.getElementById('checkout-city').value = '';
+    document.getElementById('checkout-postal').value = '';
+
+    // Remove validation classes
+    document.querySelectorAll('.form-input').forEach(el => {
+        el.classList.remove('error', 'valid');
+    });
+    document.querySelectorAll('.form-error').forEach(el => {
+        el.classList.remove('show');
+    });
+
+    navigateTo('confirmation');
+}
+
+function continueShopping() {
+    navigateTo('home');
+}
+
+// ============ TOAST SYSTEM ============
+function showToast(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = message;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('removing');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// ============ KEYBOARD SHORTCUTS ============
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeQuickView();
+        if (document.getElementById('cart-drawer').classList.contains('active')) toggleCart();
+        if (document.getElementById('wishlist-drawer').classList.contains('active')) toggleWishlist();
+        if (document.getElementById('mobile-nav').classList.contains('active')) toggleMobileNav();
+    }
+});
+
+// Close modal on overlay click
+document.getElementById('quickview-modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('quickview-modal')) closeQuickView();
+});
+</script>
+
+</body>
+</html>
